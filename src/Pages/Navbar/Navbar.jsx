@@ -18,7 +18,7 @@ const Navbar = () => {
           color: isActive ? "white" : "white",
         };
       }}
-    to = "/addproduct">Create Assignment</NavLink></li>
+    to = "/createassignment">Create Assignment</NavLink></li>
 
     
 
@@ -71,6 +71,7 @@ const Navbar = () => {
 
         <li>
           <a className="bg-black text-white hover:bg-black hover:text-white w-full">Assignments</a>
+
           <ul className="w-full">
            <div className=" w-44 flex flex-col gap-2 mt-2">
            {links}
@@ -85,7 +86,7 @@ const Navbar = () => {
           color: isActive ? "white" : "white",
         };
       }}
-    to = "/addproduct"> All Assignments</NavLink></li>
+    to = "/allassignment"> All Assignments</NavLink></li>
       </ul>
         </div>
       </ul>
@@ -110,7 +111,8 @@ const Navbar = () => {
     to = "/">Home</NavLink></li>
       <li tabIndex={0}>
         <details>
-          <summary className="bg-black text-white hover:bg-black hover:text-white"> Assignments</summary>
+        <summary className="bg-black text-white hover:bg-black hover:text-white"> <NavLink>
+        Assignments</NavLink></summary>
           <ul className="z-30">
           <div className="w-44 flex flex-col gap-2 mt-2">
           {links}
@@ -126,7 +128,7 @@ const Navbar = () => {
           color: isActive ? "white" : "white",
         };
       }}
-    to = "/addproduct">ALL Assignments</NavLink></li>
+    to = "/allassignment">ALL Assignments</NavLink></li>
     </ul>
    </div>
     </ul>
