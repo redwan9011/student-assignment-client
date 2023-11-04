@@ -55,7 +55,7 @@ const [ error, setError ] = useState(null);
          photoURL:image,
       }) 
       .then(() =>{
-        console.log('profile updated');
+        
       })
       .catch (error => {
         console.log(error.message)

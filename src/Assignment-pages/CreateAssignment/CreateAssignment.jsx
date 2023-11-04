@@ -1,9 +1,21 @@
 
 
 const CreateAssignment = () => {
+    const handleSubmitAssignment = e => {
+        e.preventDefault()
+        const form = e.target;
+        const tittle = form.title.value;
+        const image = form.image.value;
+        const marks = form.marks.value;
+        const difficulty = form.difficulty.value;
+        const date = form.date.value;
+        const description = form.description.value;
+        console.log({tittle , image, marks, difficulty, date, description});
+    }
+
     return (
         <div className="my-5 md:my-10">
-            <form className=" space-y-5">
+            <form className=" space-y-5" onSubmit={ handleSubmitAssignment }>
 
                 <div className="grid md:grid-cols-2 gap-3 md:gap-8  w-full">
                     <div className="form-control">
@@ -57,7 +69,7 @@ const CreateAssignment = () => {
                     <div className="form-control">
                         <label className="input-group">
                             <span className="bg-red-600 text-white w-28 ">Description</span>
-                            <input type="text" name="details" placeholder="assignment description" className="input input-bordered focus:outline-none w-full" />
+                            <input type="text" name="description" placeholder="assignment description" className="input input-bordered focus:outline-none w-full" />
                         </label>
                     </div>
 

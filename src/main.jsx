@@ -13,6 +13,8 @@ import Register from './Pages/Register/Register.jsx';
 import AuthProvider from './AuthPorvider/AuthProvider.jsx';
 import AllAssignment from './Assignment-pages/AllAssignments/AllAssignment.jsx';
 import CreateAssignment from './Assignment-pages/CreateAssignment/CreateAssignment.jsx';
+import PrivateRout from './PrivateRout/PrivateRout.jsx';
+import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
 
 
 
@@ -20,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <LayOuts></LayOuts> ,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -39,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/createassignment',
-        element: <CreateAssignment></CreateAssignment>
+        element: <PrivateRout><CreateAssignment></CreateAssignment></PrivateRout>
       },
 
     ]
