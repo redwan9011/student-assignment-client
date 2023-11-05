@@ -30,7 +30,7 @@ const Navbar = () => {
           color: isActive ? "white" : "white",
         };
       }}
-    to = "/mycart">My Assignment</NavLink></li>
+    to = "/myassignment">My Assignment</NavLink></li>
 
     <li> <NavLink
       style={({ isActive,  }) => {

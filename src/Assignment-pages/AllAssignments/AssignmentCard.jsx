@@ -59,10 +59,12 @@ const AssignmentCard = ({ assignment , setAssignments , assignments}) => {
           <p>Difficulty: {difficulty}</p>
           <p>Date: {date}</p>
           <div className="flex justify-between gap-4  ">
-            <button onClick={() => handleDelete(_id)} className="btn btn-primary w-2/5">Delete</button>
-         
-           <button className="btn btn-primary w-2/5">  <Link to={`/updateassignment/${_id}`}> Update
+            <button onClick={() => handleDelete(_id)} className="btn btn-primary ">Delete</button>
+           <button className="btn btn-primary ">  <Link to={`/updateassignment/${_id}`}> Update
            </Link></button>
+           <button className="btn btn-primary ">  <Link to={`/viewdetails/${_id}`}> View Details
+           </Link></button>
+           
           </div>
         </div>
       </div>
