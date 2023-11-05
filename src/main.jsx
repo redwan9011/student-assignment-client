@@ -18,6 +18,7 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
 import Update from './Home-Components/UpdateAssignment/Update.jsx';
 import ViewDetails from './Home-Components/ViewDetails/ViewDetails.jsx';
 import MyAssignment from './Assignment-pages/MyAssignment/MyAssignment.jsx';
+import AssignmentSubmit from './Assignment-pages/AssignmentSubmit/AssignmentSubmit.jsx';
 
 
 
@@ -63,6 +64,12 @@ const router = createBrowserRouter([
         path: '/myassignment',
         element: <PrivateRout> <MyAssignment></MyAssignment> </PrivateRout>,
         loader: () => fetch('http://localhost:3000/assignments')
+      },
+
+      {
+        path: '/assignmentsubmit',
+        element: <PrivateRout> <AssignmentSubmit></AssignmentSubmit> </PrivateRout>,
+        
       },
 
     ]

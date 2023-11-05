@@ -20,7 +20,7 @@ const ViewDetails = () => {
           <p>Date: {date}</p>
           <div className="flex justify-between gap-4  ">
            
-           <button className="btn btn-primary ">  <Link > Take Assignment
+           <button className="btn btn-primary ">  <Link to='/assignmentsubmit'> Take Assignment
            </Link></button>
          
            

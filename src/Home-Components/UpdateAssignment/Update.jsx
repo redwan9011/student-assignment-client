@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -6,7 +6,7 @@ const Update = () => {
     const assignmentData = useLoaderData()
     console.log(assignmentData);
     const {date, difficulty, description, marks, image, tittle, _id} = assignmentData || {};
-
+    
     const handleUpdateAssignment = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -30,6 +30,7 @@ const Update = () => {
         if(data.modifiedCount > 0) {
             Swal.fire('Assignment Update SuccessFully')
         }
+        
     })
     }
    

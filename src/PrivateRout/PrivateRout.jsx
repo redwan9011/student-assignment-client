@@ -21,7 +21,7 @@ const PrivateRout = ({children}) => {
 };
 
 PrivateRout.propTypes = {
-    children:PropTypes.object
-}
+    children: PropTypes.node
+  };
 
 export default PrivateRout;
