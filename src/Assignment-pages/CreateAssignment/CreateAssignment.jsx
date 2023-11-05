@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { AuthContext } from "../../AuthPorvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const CreateAssignment = () => {
+    const {user} = useContext(AuthContext)
     const handleSubmitAssignment = e => {
         e.preventDefault()
         const form = e.target;
@@ -10,7 +14,25 @@ const CreateAssignment = () => {
         const difficulty = form.difficulty.value;
         const date = form.date.value;
         const description = form.description.value;
-        console.log({tittle , image, marks, difficulty, date, description});
+        const email = user?.email
+        
+        const assignmentData = { tittle , image, marks, difficulty, date, description, email }
+    
+        console.log(assignmentData);
+
+
+        fetch('http://localhost:3000/assignments' , {
+            method: 'POST',
+            headers: { 'content-type': 'application/json'} ,
+            body: JSON.stringify(assignmentData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.acknowledged) {
+                Swal.fire('Assignment Submit SuccessFully')
+            }
+        })
     }
 
     return (

@@ -49,6 +49,7 @@ const Navbar = () => {
     </>
     return (
         <div>
+
             <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -111,8 +112,8 @@ const Navbar = () => {
     to = "/">Home</NavLink></li>
       <li tabIndex={0}>
         <details>
-        <summary className="bg-black text-white hover:bg-black hover:text-white"> <NavLink>
-        Assignments</NavLink></summary>
+        <summary className="bg-black text-white hover:bg-black hover:text-white"> 
+        Assignments</summary>
           <ul className="z-30">
           <div className="w-44 flex flex-col gap-2 mt-2">
           {links}

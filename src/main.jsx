@@ -38,7 +38,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/allassignment',
-        element: <AllAssignment></AllAssignment>
+        element: <AllAssignment></AllAssignment>,
+        loader: ()=> fetch('http://localhost:3000/assignments')
       },
       {
         path: '/createassignment',
