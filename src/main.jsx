@@ -15,6 +15,7 @@ import AllAssignment from './Assignment-pages/AllAssignments/AllAssignment.jsx';
 import CreateAssignment from './Assignment-pages/CreateAssignment/CreateAssignment.jsx';
 import PrivateRout from './PrivateRout/PrivateRout.jsx';
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
+import Update from './Home-Components/UpdateAssignment/Update.jsx';
 
 
 
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
       {
         path: '/createassignment',
         element: <PrivateRout><CreateAssignment></CreateAssignment></PrivateRout>
+      },
+      {
+        path: '/updateassignment/:id',
+        element: <PrivateRout><Update></Update></PrivateRout>,
+        loader: ({params})=> fetch(`http://localhost:3000/assignments/${params.id}`)
       },
 
     ]
