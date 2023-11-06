@@ -8,16 +8,17 @@ const SubmittedAssignment = () => {
         <div>
             submitted assignment {submittedAssignments.length}
 
-            <div >
+            <div className="bg-red-100">
   <table className="table text-center">
     {/* head */}
     <thead>
       <tr className="font-bold text-black text-base">
       
       <th>Name</th>
-        <th>Date</th>
-        <th className="">Title</th>
-        <th>Marks</th>
+      <th className="">Title</th>
+        <th>Marks </th>
+        
+        <th>Status</th>
         <th> </th>
       </tr>
     </thead>
