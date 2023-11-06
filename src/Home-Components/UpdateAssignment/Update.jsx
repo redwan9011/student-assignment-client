@@ -1,11 +1,16 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthPorvider/AuthProvider";
 
 
 const Update = () => {
     const assignmentData = useLoaderData()
     console.log(assignmentData);
-    const {date, difficulty, description, marks, image, tittle, _id} = assignmentData || {};
+    const { user} = useContext(AuthContext)
+    const currentUser = user?.email;
+
+    const {date, difficulty, description, marks, image, tittle, _id , email} = assignmentData || {};
     
     const handleUpdateAssignment = (e) => {
         e.preventDefault()
@@ -19,7 +24,8 @@ const Update = () => {
 
         const updateAssignment = { tittle , image, marks, difficulty, date, description}
         
-    fetch(`http://localhost:3000/assignments/${_id}` , {
+    if( currentUser === email) {
+        fetch(`http://localhost:3000/assignments/${_id}` , {
         method: "PUT",
         headers: {'content-type' : 'application/json'},
         body: JSON.stringify( updateAssignment)
@@ -32,6 +38,11 @@ const Update = () => {
         }
         
     })
+    }
+    else {
+        return  Swal.fire('You can not update this Assignment ')
+    }
+
     }
    
     return (

@@ -40,7 +40,7 @@ const Navbar = () => {
           color: isActive ? "white" : "white",
         };
       }}
-    to = "/mycart">Submitted Assignment</NavLink></li>
+    to = "/submittedassignment">Submitted Assignment</NavLink></li>
 
   
        
@@ -115,7 +115,7 @@ const Navbar = () => {
         <summary className="bg-black text-white hover:bg-black hover:text-white"> 
         Assignments</summary>
           <ul className="z-30">
-          <div className="w-44 flex flex-col gap-2 mt-2">
+          <div className="w-48 flex flex-col gap-2 mt-2">
           {links}
           </div>
           </ul>

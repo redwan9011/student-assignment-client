@@ -5,6 +5,7 @@ import {  useState } from "react";
 
 const AllAssignment = () => {
     const assignmentsloaded = useLoaderData()
+    
     const [assignments, setAssignments] = useState(assignmentsloaded)
     console.log(assignments);
 
@@ -17,7 +18,7 @@ const AllAssignment = () => {
         const remaining = assignmentsloaded.filter( assignment => assignment.difficulty === sort )
         console.log(remaining);
         setAssignments(remaining)
-        
+       
     }
 
     return (
@@ -25,7 +26,7 @@ const AllAssignment = () => {
             <h1>assignments: {assignments.length}</h1>
            <form  className="py-5" onSubmit={handleSort}>
            <select className="select select-secondary w-full max-w-xs mr-5" name="sort">
-               
+                   
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>

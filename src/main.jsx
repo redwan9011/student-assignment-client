@@ -19,6 +19,7 @@ import Update from './Home-Components/UpdateAssignment/Update.jsx';
 import ViewDetails from './Home-Components/ViewDetails/ViewDetails.jsx';
 import MyAssignment from './Assignment-pages/MyAssignment/MyAssignment.jsx';
 import AssignmentSubmit from './Assignment-pages/AssignmentSubmit/AssignmentSubmit.jsx';
+import SubmittedAssignment from './Assignment-pages/SubmittedAssignment/SubmittedAssignment.jsx';
 
 
 
@@ -70,6 +71,12 @@ const router = createBrowserRouter([
         path: '/assignmentsubmit/:id',
         element: <PrivateRout> <AssignmentSubmit></AssignmentSubmit> </PrivateRout>,
         loader: ({params})=> fetch(`http://localhost:3000/assignments/${params.id}`)
+      },
+
+      {
+        path: '/submittedassignment',
+        element: <PrivateRout> <SubmittedAssignment></SubmittedAssignment> </PrivateRout>,
+        loader: ()=> fetch(`http://localhost:3000/submit`)
       },
 
     ]
