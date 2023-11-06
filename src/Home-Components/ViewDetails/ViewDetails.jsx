@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const ViewDetails = () => {
     const assignmentData = useLoaderData()
     console.log(assignmentData);
-    const {date, difficulty, description, marks, image, tittle, } = assignmentData || {};
+    const {date, difficulty, description, marks, image, tittle,_id } = assignmentData || {};
 
     return (
         <div>
@@ -20,7 +20,7 @@ const ViewDetails = () => {
           <p>Date: {date}</p>
           <div className="flex justify-between gap-4  ">
            
-           <button className="btn btn-primary ">  <Link to='/assignmentsubmit'> Take Assignment
+           <button className="btn btn-primary ">  <Link to={`/assignmentsubmit/${_id}`}> Take Assignment
            </Link></button>
          
            

@@ -1,8 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthPorvider/AuthProvider";
+import { useLoaderData } from "react-router-dom";
 
 
 const AssignmentSubmit = () => {
+    const assignment = useLoaderData()
+    console.log(assignment);
+
     const {user} = useContext(AuthContext)
     const currentUSer = user?.email
     const handleSubmit = e => {
@@ -15,7 +19,7 @@ const AssignmentSubmit = () => {
         
         console.log(AssignmentSubmit);
     }   
-
+   
     return (
         <div className=" flex  items-center">
            <form onSubmit={ handleSubmit} >
