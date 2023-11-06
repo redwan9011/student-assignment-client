@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import AssignmentCard from "./AssignmentCard";
-import { useState } from "react";
+import {  useState } from "react";
 
 
 const AllAssignment = () => {
@@ -8,10 +8,16 @@ const AllAssignment = () => {
     const [assignments, setAssignments] = useState(assignmentsloaded)
     console.log(assignments);
 
+ 
+
     const handleSort = e => {
         e.preventDefault()
         const sort = e.target.sort.value;
         console.log(sort);
+        const remaining = assignmentsloaded.filter( assignment => assignment.difficulty === sort )
+        console.log(remaining);
+        setAssignments(remaining)
+        
     }
 
     return (
