@@ -20,6 +20,7 @@ import ViewDetails from './Home-Components/ViewDetails/ViewDetails.jsx';
 import MyAssignment from './Assignment-pages/MyAssignment/MyAssignment.jsx';
 import AssignmentSubmit from './Assignment-pages/AssignmentSubmit/AssignmentSubmit.jsx';
 import SubmittedAssignment from './Assignment-pages/SubmittedAssignment/SubmittedAssignment.jsx';
+import GiveMarks from './Assignment-pages/GiveMarks/GiveMarks.jsx';
 
 
 
@@ -77,6 +78,12 @@ const router = createBrowserRouter([
         path: '/submittedassignment',
         element: <PrivateRout> <SubmittedAssignment></SubmittedAssignment> </PrivateRout>,
         loader: ()=> fetch(`http://localhost:3000/submit`)
+      },
+
+      {
+        path: '/givemarks/:id',
+        element: <PrivateRout> <GiveMarks></GiveMarks> </PrivateRout>,
+        loader: ({params})=> fetch(`http://localhost:3000/submit/${params.id}`)
       },
 
     ]
