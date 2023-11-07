@@ -5,18 +5,23 @@ import {   useEffect, useState } from "react";
 
 
 const AllAssignment = () => {
-    const assignmentsloaded = useLoaderData()
+   const [assignmentsloaded , setAssignmentsloaded ]= useState([])
 
-    // const [assignmentsloaded , setAssignmentsloaded] = useState([])
+ useEffect ( ()=> {
+    fetch('http://localhost:3000/assignments')
+    .then(res => res.json())
+    .then(data => setAssignmentsloaded(data) )
+ }, [setAssignmentsloaded ])
 
     const [assignments, setAssignments] = useState([])
 
     const [itemsperPage, setItemsPerPage] = useState(5)
-    const [curerentPage, setCurrentPage] = useState(1)
-    const count = assignments.length
+    const [curerentPage, setCurrentPage] = useState(0)
+    
+    const {count} = useLoaderData()
     const numberofPages = Math.ceil (count / itemsperPage)
 
-    const pages = [ ...Array(numberofPages).keys()].map(index => index + 1)
+    const pages = [ ...Array(numberofPages).keys()]
     
     useEffect(()=> {
         fetch(`http://localhost:3000/assignments?page=${curerentPage}&size=${itemsperPage}`)
@@ -24,7 +29,7 @@ const AllAssignment = () => {
         .then(data => setAssignments(data))
     } , [curerentPage, itemsperPage])
     console.log(assignments);
-   
+
    
 
     const handleSort = e => {
@@ -37,21 +42,7 @@ const AllAssignment = () => {
        
     }
 
-    // pagination
-    // const [totalCount , setTotalCount] = useState();
-    // useEffect( ()=> {
-    //     fetch('http://localhost:3000/assignmentsCount')
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         setTotalCount(data)
-    //     })
-    // }, [])
-    // const {count} = totalCount || {}
 
-  
-
-
-//    console.log(pages );
     const handlePerPageItems =(e) => {
         const value = parseInt(e.target.value)
         // console.log(value)
@@ -60,13 +51,13 @@ const AllAssignment = () => {
     }
 
     const handlePrev = () => {
-        if(curerentPage > 1) {
+        if(curerentPage > 0) {
             setCurrentPage(curerentPage - 1)
         }
     }
 
     const handleNextpage = () => {
-        if( curerentPage < pages.length ){
+        if( curerentPage < pages.length -1){
             setCurrentPage(curerentPage + 1)
         }
     }
@@ -74,8 +65,8 @@ const AllAssignment = () => {
 
     return (
         <div>
-            <h1>assignments: {assignments.length}</h1>
-           <form  className="py-5" onSubmit={handleSort}>
+            <h1>Total assignments: {count}</h1>
+           <form  className="py-5" onSubmit={ handleSort} >
            <select className="select select-secondary w-full max-w-xs mr-5" name="sort">
                    
                     <option value="Easy">Easy</option>
