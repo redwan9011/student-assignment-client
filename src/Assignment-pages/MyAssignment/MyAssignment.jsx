@@ -20,9 +20,7 @@ const MyAssignment = () => {
 
   console.log(assignments);
     return (
-        <div>
-            my all assignment : {assignments.length}
-
+        <div className="mt-3 mb-10">
          <div className="grid grid-cols-3 gap-3">
          {
                 assignments.map(assignment => <MyAssignmentCard 

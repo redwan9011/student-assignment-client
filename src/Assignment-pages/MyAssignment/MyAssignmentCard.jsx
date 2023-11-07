@@ -49,19 +49,29 @@ const MyAssignmentCard = ({assignment ,assignments,setAssignments}) => {
         <div>
       <div className="card bg-base-100 shadow-xl">
         <figure className="px-5 pt-10">
-          <img src={image} alt="Shoes" className="rounded-xl" />
+        <img src={image} alt="assignment image" className="rounded-xl w-full h-44" />
         </figure>
         <div className=" px-5 ">
-          <h2 className="">{tittle}</h2>
-          <p>{description}</p>
-          <p>Mark: {marks}</p>
-          <p>Difficulty: {difficulty}</p>
-          <p>Date: {date}</p>
-          <div className="flex justify-between gap-4  ">
+        <h2 className="font-bold text-black text-xl my-2">{tittle}</h2>
+       
+       <div className="flex justify-between">
+       <p className="font-semibold text-lg ">Mark: <span className="font-bold ">{marks}</span></p>
+         <p className="font-semibold ">Difficulty: <span className="font-bold">{difficulty}</span></p>
+       </div>
+
+          {/* <div className="flex justify-between gap-4  ">
             <button onClick={() => handleDelete(_id)} className="btn btn-primary ">Delete</button>
            <button className="btn btn-primary ">  <Link to={`/updateassignment/${_id}`}> Update
            </Link></button>
            <button className="btn btn-primary ">  <Link to={`/viewdetails/${_id}`}> View Details
+           </Link></button>
+          </div> */}
+
+<div className="flex justify-between gap-4  py-4">
+            <button onClick={() => handleDelete(_id)} className="btn bg-red-600  text-white hover:bg-red-800">Delete</button>
+           <button className="btn btn-outline btn-success ">  <Link to={`/updateassignment/${_id}`}> Update
+           </Link></button>
+           <button className="btn btn-outline btn-info ">  <Link to={`/viewdetails/${_id}`}> View Details
            </Link></button>
            
           </div>

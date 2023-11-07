@@ -54,10 +54,10 @@ const AssignmentCard = ({ assignment , setAssignments , assignments}) => {
         </figure>
         <div className=" px-5 ">
           <h2 className="font-bold text-black text-xl my-2">{tittle}</h2>
-          {/* <p>{description}</p> */}
+       
         <div className="flex justify-between">
         <p className="font-semibold text-lg ">Mark: <span className="font-bold ">{marks}</span></p>
-          <p className="font-semibold ">Difficulty:<span className="font-bold">{difficulty}</span></p>
+          <p className="font-semibold ">Difficulty: <span className="font-bold">{difficulty}</span></p>
         </div>
          
           <div className="flex justify-between gap-4  py-4">

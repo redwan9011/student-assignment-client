@@ -47,7 +47,7 @@ const AllAssignment = () => {
         const value = parseInt(e.target.value)
         // console.log(value)
         setItemsPerPage(value)
-        setCurrentPage(1)
+        setCurrentPage(0)
     }
 
     const handlePrev = () => {
@@ -65,16 +65,15 @@ const AllAssignment = () => {
 
     return (
         <div>
-            <h1>Total assignments: {count}</h1>
            <form  className="py-5" onSubmit={ handleSort} >
-           <select className="select select-secondary w-full max-w-xs mr-5" name="sort">
+           <select className="select select-secondary w-1/2 md:w-full max-w-xs mr-5" name="sort">
                    
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
                
             </select>
-            <input type="submit" value="Sort by" className=" btn btn-outline btn-secondary"/>
+            <input type="submit" value="Sort by" className=" btn btn-outline btn-secondary "/>
            </form>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {
