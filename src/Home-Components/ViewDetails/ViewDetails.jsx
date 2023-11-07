@@ -7,20 +7,22 @@ const ViewDetails = () => {
     const {date, difficulty, description, marks, image, tittle,_id } = assignmentData || {};
 
     return (
-        <div>
+        <div className="mb-12">
       <div className="card bg-base-100 shadow-xl">
         <figure className="px-5 pt-10">
           <img src={image} alt="Shoes" className="rounded-xl" />
         </figure>
-        <div className=" px-5 ">
-          <h2 className="">{tittle}</h2>
-          <p>{description}</p>
-          <p>Mark: {marks}</p>
-          <p>Difficulty: {difficulty}</p>
-          <p>Date: {date}</p>
+        <div className=" px-5 space-y-1">
+          <h2 className="font-bold text-xl md:text-4xl">{tittle}</h2>
+          <p className="md:text-xl text-slate-700">{description}</p>
+       
+        <p className="font-semibold md:text-lg">Mark: {marks}</p>
+          <p className="font-semibold md:text-lg">Difficulty: {difficulty}</p>
+          <p className="md:text-xl font-bold ">Date: {date}</p>
+       
           <div className="flex justify-between gap-4  ">
            
-           <button className="btn btn-primary ">  <Link to={`/assignmentsubmit/${_id}`}> Take Assignment
+           <button className="btn bg-red-600 my-5 text-white hover:bg-red-800 w-full">  <Link to={`/assignmentsubmit/${_id}`}> Take Assignment
            </Link></button>
          
            

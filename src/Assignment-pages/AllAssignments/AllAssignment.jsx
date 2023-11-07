@@ -76,7 +76,7 @@ const AllAssignment = () => {
             </select>
             <input type="submit" value="Sort by" className=" btn btn-outline btn-secondary"/>
            </form>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {
                     assignments.map(assignment => <AssignmentCard
                         key={assignment._id}
@@ -88,7 +88,7 @@ const AllAssignment = () => {
             </div>
 
             <div className="text-center flex justify-center gap-2 my-10 ">
-                <p>currentpage : {curerentPage}</p>
+               
                <button onClick={handlePrev} className="bg-red-600 btn text-white 
                hover:bg-red-600">prev</button>
                 {

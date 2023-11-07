@@ -4,9 +4,9 @@ import { useLoaderData } from "react-router-dom";
 
 const GiveMarks = () => {
     const givemarks = useLoaderData()
-    console.log(givemarks);
-    const {  pdf, note, status} =givemarks || {}
-    console.log(status);
+   
+    const {  pdf, note, } =givemarks || {}
+   
         const handleMarksSubmit = (e) => {
         e.preventDefault()
         const form = e.target
@@ -35,10 +35,11 @@ const GiveMarks = () => {
     //     })
     // }
     return (
-        <div>
-            <div>
-                <h1>PDF link : {pdf}</h1>
-                <h1>Note : {note}</h1>
+        <div className="my-5 ">
+            <div className="mb-5  ">
+                <h1 className="text-xl font-bold">PDF Link : <a className="btn btn-link text-lg"  >{pdf}</a></h1>
+                <h1 className="font-semibold text-lg">Note : {note}</h1>
+               
             </div>
               <form onSubmit={ handleMarksSubmit }>
                         <input type="text" placeholder="Marks" name="giveMarks" className="input input-bordered input-secondary w-full max-w-xs mb-1" required /> <br />

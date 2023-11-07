@@ -20,6 +20,12 @@ const CreateAssignment = () => {
     
         console.log(assignmentData);
 
+        if( !/^[0-9]+$/.test(marks)){
+            return  Swal.fire('Marks should be Number')
+        }
+        if( description.length < 100 ){
+            return  Swal.fire('Description should be atleast 40 words')
+        }
 
         fetch('http://localhost:3000/assignments' , {
             method: 'POST',
@@ -43,14 +49,14 @@ const CreateAssignment = () => {
                     <div className="form-control">
                         <label className="input-group">
                             <span className="bg-red-600 text-white w-24 "> Title</span>
-                            <input type="text" name="title" placeholder="assignment title" className="input input-bordered focus:outline-none w-full" />
+                            <input type="text" name="title" placeholder="assignment title" className="input input-bordered focus:outline-none w-full" required />
                         </label>
                     </div>
 
                     <div className="form-control">
                         <label className="input-group">
                             <span className="bg-red-600 text-white w-24">Image</span>
-                            <input type="text" name="image" placeholder="image URL" className="input input-bordered focus:outline-none w-full" />
+                            <input type="text" name="image" placeholder="image URL" className="input input-bordered focus:outline-none w-full" required />
                         </label>
                     </div>
 
@@ -63,14 +69,14 @@ const CreateAssignment = () => {
                     <div className="form-control">
                         <label className="input-group">
                             <span className="bg-red-600 text-white w-24">Marks</span>
-                            <input type="text" name="marks" placeholder="Marks" className="input input-bordered focus:outline-none w-full" />
+                            <input type="text" name="marks" placeholder="Marks" className="input input-bordered focus:outline-none w-full" required />
                         </label>
                     </div>
 
                     <div className="form-control">
                         <label className="input-group">
                             <span className="bg-red-600 text-white w-24 ">Difficulty</span>
-                            <select className="input input-bordered focus:outline-none w-full " id="cars" name="difficulty"  >
+                            <select className="input input-bordered focus:outline-none w-full " id="cars" name="difficulty" >
                                 <option value="Easy">Easy</option>
                                 <option value="Medium">Medium</option>
                                 <option value="Hard">Hard</option>
@@ -81,7 +87,7 @@ const CreateAssignment = () => {
                     <div className="form-control">
                         <label className="input-group">
                             <span className="bg-red-600 text-white w-24 ">Date</span>
-                           <input type="date" name="date" id="" className="input input-bordered focus:outline-none w-full"/>
+                           <input type="date" name="date" id="" className="input input-bordered focus:outline-none w-full" required/>
                         </label>
                     </div>
 
@@ -91,7 +97,7 @@ const CreateAssignment = () => {
                     <div className="form-control">
                         <label className="input-group">
                             <span className="bg-red-600 text-white w-28 ">Description</span>
-                            <input type="text" name="description" placeholder="assignment description" className="input input-bordered focus:outline-none w-full" />
+                            <input type="text" name="description" placeholder="assignment description" className="input input-bordered focus:outline-none w-full" required/>
                         </label>
                     </div>
 

@@ -23,7 +23,7 @@ const SubmittedRow = ({ assignment }) => {
 
     
     return (
-        <tr>
+        <tr >
             <td>{name}</td>
             <td>{title}</td>
             <td>{marks}</td>
