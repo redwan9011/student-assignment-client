@@ -1,8 +1,16 @@
-# React + Vite
+live link: https://student-assignment-d7342.web.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+About my Project: 
+    * Home page have navbar, banner, feature card, FAQ and footer section
 
-Currently, two official plugins are available:
+    * Navbar section have logo , menu and login / register page, if user click on login page , user redirect to the login page and user can login and if he have no account then he will go to register page and create a account
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    * Menu Have Home, Assignments ( Create Assignments, My Assignments, submitted Assignment) and All Assignments;
+
+    * If user click on the All Assignment button , user will see all assignmet list as card, and each card have image, assignment title, marks, difficulty, and 3 button: Delete, Update and View details
+
+    * In create assignment page the login user can create assignment .
+
+    * In my assignment  page user will see user's assignment which was created by him/her
+
+    And theere are many more function like only creator of assignment will delete and update. In View details page user will see assignments Details and a Take Assignment button, and user wiil submit assignment with pdf and quick note to submit assignment. Then submitted asssignment data will store submitted Assignment page" 

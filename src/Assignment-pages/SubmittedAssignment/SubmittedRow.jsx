@@ -13,7 +13,7 @@ const SubmittedRow = ({ assignment }) => {
     //     const feedback = form.feedback.value;
     //     console.log(giveMarks, feedback);
     //     const submitMark = { giveMarks, feedback}
-    //     axios.post('http://localhost:3000/submitmark' , submitMark)
+    //     axios.post('https://student-assignment-server.vercel.app/submitmark' , submitMark)
     //     .then(res => {
     //         console.log(res.data);
     //         form.reset()

@@ -16,7 +16,7 @@ const GiveMarks = () => {
         const feedback = form.feedback.value;
        
         const submitMark = { giveMarks, feedback}
-        axios.post('http://localhost:3000/submitmark' , submitMark)
+        axios.post('https://student-assignment-server.vercel.app/submitmark' , submitMark)
         .then(res => {
             console.log(res.data);
             form.reset()
@@ -26,7 +26,7 @@ const GiveMarks = () => {
 
     // const handlechangestatus = id => {
 
-    //     fetch(`http://localhost:3000/submit/${id}`, {
+    //     fetch(`https://student-assignment-server.vercel.app/submit/${id}`, {
     //         method: 'PATCH',
     //         headers: { 'content-type': 'application/json'} ,
     //         body: JSON.stringify(status)

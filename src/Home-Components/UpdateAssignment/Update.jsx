@@ -25,7 +25,7 @@ const Update = () => {
         const updateAssignment = { tittle , image, marks, difficulty, date, description}
         
     if( currentUser === email) {
-        fetch(`http://localhost:3000/assignments/${_id}` , {
+        fetch(`https://student-assignment-server.vercel.app/assignments/${_id}` , {
         method: "PUT",
         headers: {'content-type' : 'application/json'},
         body: JSON.stringify( updateAssignment)

@@ -24,7 +24,7 @@ const AssignmentSubmit = () => {
         const assignmentSubmit = { pdf, note, currentUSer , status , name , title ,marks };
         
 
-      axios.post('http://localhost:3000/submit' ,assignmentSubmit)
+      axios.post('https://student-assignment-server.vercel.app/submit' ,assignmentSubmit)
       .then(res => {
         console.log(res.data);
         Swal.fire('Assignment Submitted')

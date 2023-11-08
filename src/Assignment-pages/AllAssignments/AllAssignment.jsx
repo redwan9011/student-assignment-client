@@ -11,14 +11,14 @@ const AllAssignment = () => {
 const {isPending ,data:assignmentsloaded } = useQuery({
     queryKey: ['assignmentsloaded'],
     queryFn: async() => {
-        const res = await  fetch('http://localhost:3000/assignments')
+        const res = await  fetch('https://student-assignment-server.vercel.app/assignments')
         return res.json()
     }
 })
 
 //    const [assignmentsloaded , setAssignmentsloaded ]= useState([])
 //  useEffect ( ()=> {
-//     fetch('http://localhost:3000/assignments')
+//     fetch('https://student-assignment-server.vercel.app/assignments')
 //     .then(res => res.json())
 //     .then(data => setAssignmentsloaded(data) )
 //  }, [setAssignmentsloaded ])
@@ -34,7 +34,7 @@ const {isPending ,data:assignmentsloaded } = useQuery({
     const pages = [ ...Array(numberofPages).keys()]
     
     useEffect(()=> {
-        fetch(`http://localhost:3000/assignments?page=${curerentPage}&size=${itemsperPage}`)
+        fetch(`https://student-assignment-server.vercel.app/assignments?page=${curerentPage}&size=${itemsperPage}`)
         .then(res => res.json())
         .then(data => setAssignments(data))
     } , [curerentPage, itemsperPage])

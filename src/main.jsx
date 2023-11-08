@@ -49,8 +49,8 @@ const router = createBrowserRouter([
       {
         path: '/allassignment',
         element: <AllAssignment></AllAssignment>,
-        // loader: ()=> fetch('http://localhost:3000/assignments')
-         loader: ()=> fetch('http://localhost:3000/assignmentsCount')
+        // loader: ()=> fetch('https://student-assignment-server.vercel.app/assignments')
+         loader: ()=> fetch('https://student-assignment-server.vercel.app/assignmentsCount')
 
       },
       {
@@ -60,36 +60,36 @@ const router = createBrowserRouter([
       {
         path: '/updateassignment/:id',
         element: <PrivateRout><Update></Update></PrivateRout>,
-        loader: ({params})=> fetch(`http://localhost:3000/assignments/${params.id}`)
+        loader: ({params})=> fetch(`https://student-assignment-server.vercel.app/assignments/${params.id}`)
       },
       {
         path: '/viewdetails/:id',
         element: <PrivateRout> <ViewDetails></ViewDetails></PrivateRout>,
-        loader: ({params})=> fetch(`http://localhost:3000/assignments/${params.id}`)
+        loader: ({params})=> fetch(`https://student-assignment-server.vercel.app/assignments/${params.id}`)
       },
 
       {
         path: '/myassignment',
         element: <PrivateRout> <MyAssignment></MyAssignment> </PrivateRout>,
-        loader: () => fetch('http://localhost:3000/assignments')
+        loader: () => fetch('https://student-assignment-server.vercel.app/assignments')
       },
 
       {
         path: '/assignmentsubmit/:id',
         element: <PrivateRout> <AssignmentSubmit></AssignmentSubmit> </PrivateRout>,
-        loader: ({params})=> fetch(`http://localhost:3000/assignments/${params.id}`)
+        loader: ({params})=> fetch(`https://student-assignment-server.vercel.app/assignments/${params.id}`)
       },
 
       {
         path: '/submittedassignment',
         element: <PrivateRout> <SubmittedAssignment></SubmittedAssignment> </PrivateRout>,
-        loader: ()=> fetch(`http://localhost:3000/submit`)
+        loader: ()=> fetch(`https://student-assignment-server.vercel.app/submit`)
       },
 
       {
         path: '/givemarks/:id',
         element: <PrivateRout> <GiveMarks></GiveMarks> </PrivateRout>,
-        loader: ({params})=> fetch(`http://localhost:3000/submit/${params.id}`)
+        loader: ({params})=> fetch(`https://student-assignment-server.vercel.app/submit/${params.id}`)
       },
 
     ]

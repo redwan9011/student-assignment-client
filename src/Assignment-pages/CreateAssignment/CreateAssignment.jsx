@@ -27,7 +27,7 @@ const CreateAssignment = () => {
             return  Swal.fire('Description should be atleast 40 words')
         }
 
-        fetch('http://localhost:3000/assignments' , {
+        fetch('https://student-assignment-server.vercel.app/assignments' , {
             method: 'POST',
             headers: { 'content-type': 'application/json'} ,
             body: JSON.stringify(assignmentData)

@@ -21,7 +21,7 @@ const AssignmentCard = ({ assignment , setAssignments , assignments}) => {
     }).then((result) => {
       if (result.isConfirmed && email === currentUser) {
 
-        fetch(`http://localhost:3000/assignments/${id}`, {
+        fetch(`https://student-assignment-server.vercel.app/assignments/${id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

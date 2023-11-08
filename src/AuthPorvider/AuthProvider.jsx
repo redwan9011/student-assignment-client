@@ -50,13 +50,13 @@ const AuthProvider = ({children}) => {
                 // token generate
 
             if(currentUser) {
-                axios.post('http://localhost:3000/jwt', loggedUser ,{withCredentials:true})
+                axios.post('https://student-assignment-server.vercel.app/jwt', loggedUser ,{withCredentials:true})
                 .then(res => {
                     console.log ( 'token comes', res.data);
                 })
               }
             else{
-               axios.post('http://localhost:3000/logout',loggedUser,{withCredentials:true})
+               axios.post('https://student-assignment-server.vercel.app/logout',loggedUser,{withCredentials:true})
                .then(res => {
                     console.log(res.data);
                })
