@@ -1,17 +1,29 @@
 import { useLoaderData } from "react-router-dom";
 import AssignmentCard from "./AssignmentCard";
 import {   useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+
 
 
 
 const AllAssignment = () => {
-   const [assignmentsloaded , setAssignmentsloaded ]= useState([])
 
- useEffect ( ()=> {
-    fetch('http://localhost:3000/assignments')
-    .then(res => res.json())
-    .then(data => setAssignmentsloaded(data) )
- }, [setAssignmentsloaded ])
+const {isPending ,data:assignmentsloaded } = useQuery({
+    queryKey: ['assignmentsloaded'],
+    queryFn: async() => {
+        const res = await  fetch('http://localhost:3000/assignments')
+        return res.json()
+    }
+})
+
+
+
+//    const [assignmentsloaded , setAssignmentsloaded ]= useState([])
+//  useEffect ( ()=> {
+//     fetch('http://localhost:3000/assignments')
+//     .then(res => res.json())
+//     .then(data => setAssignmentsloaded(data) )
+//  }, [setAssignmentsloaded ])
 
     const [assignments, setAssignments] = useState([])
 
@@ -36,7 +48,7 @@ const AllAssignment = () => {
         e.preventDefault()
         const sort = e.target.sort.value;
         console.log(sort);
-        const remaining = assignmentsloaded.filter( assignment => assignment.difficulty === sort )
+        const remaining = assignmentsloaded?.filter( assignment => assignment.difficulty === sort )
         console.log(remaining);
         setAssignments(remaining)
        
@@ -62,7 +74,11 @@ const AllAssignment = () => {
         }
     }
 
-
+    if( isPending) {
+        return <div className="h-screen flex justify-center items-center">
+            <span className="loading loading-spinner loading-lg  "></span>
+        </div>
+    }
     return (
         <div>
            <form  className="py-5" onSubmit={ handleSort} >

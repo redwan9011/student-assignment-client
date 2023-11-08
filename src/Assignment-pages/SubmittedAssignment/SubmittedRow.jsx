@@ -29,9 +29,9 @@ const SubmittedRow = ({ assignment }) => {
             <td>{marks}</td>
             <td>{status}</td>
 
-            <th>
+            <th >
                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
-               <button ><Link to={`/givemarks/${_id}`} className="btn bg-red-600 text-white hover:bg-red-700">Give Marks</Link></button>
+               <button ><Link to={`/givemarks/${_id}`} className="btn bg-red-600 text-white hover:bg-red-700 ">Give Marks</Link></button>
             </th>
 
         </tr>

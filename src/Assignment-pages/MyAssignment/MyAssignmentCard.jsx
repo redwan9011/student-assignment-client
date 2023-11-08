@@ -7,7 +7,7 @@ import { AuthContext } from "../../AuthPorvider/AuthProvider";
 const MyAssignmentCard = ({assignment ,assignments,setAssignments}) => {
     const { user } = useContext(AuthContext)
     const currentUser = user?.email
-    const { date, difficulty, description, marks, image, tittle, _id, email } = assignment || {};
+    const {  difficulty,  marks, image, tittle, _id, email } = assignment || {};
 
     const handleDelete = (id) => {
         Swal.fire({

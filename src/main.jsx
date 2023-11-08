@@ -22,7 +22,11 @@ import AssignmentSubmit from './Assignment-pages/AssignmentSubmit/AssignmentSubm
 import SubmittedAssignment from './Assignment-pages/SubmittedAssignment/SubmittedAssignment.jsx';
 import GiveMarks from './Assignment-pages/GiveMarks/GiveMarks.jsx';
 
+import {
 
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
 const router = createBrowserRouter([
   {
@@ -91,11 +95,15 @@ const router = createBrowserRouter([
     ]
   },
 ]);
-
+const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
+
+<QueryClientProvider client={queryClient}>
+<AuthProvider>
     <RouterProvider router={router} />
     </AuthProvider>
+    </QueryClientProvider>
+   
   </React.StrictMode>,
 )
