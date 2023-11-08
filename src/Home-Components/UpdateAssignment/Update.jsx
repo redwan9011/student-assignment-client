@@ -40,7 +40,12 @@ const Update = () => {
     })
     }
     else {
-        return  Swal.fire('You can not update this Assignment ')
+        return  Swal.fire({
+            icon: "error",
+            title: "Oops... you Can't update",
+            text: "Only Creator can update",
+            
+          });
     }
 
     }

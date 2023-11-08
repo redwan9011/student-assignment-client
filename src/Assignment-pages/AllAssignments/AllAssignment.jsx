@@ -16,8 +16,6 @@ const {isPending ,data:assignmentsloaded } = useQuery({
     }
 })
 
-
-
 //    const [assignmentsloaded , setAssignmentsloaded ]= useState([])
 //  useEffect ( ()=> {
 //     fetch('http://localhost:3000/assignments')

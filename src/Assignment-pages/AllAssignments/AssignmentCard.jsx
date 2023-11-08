@@ -40,7 +40,12 @@ const AssignmentCard = ({ assignment , setAssignments , assignments}) => {
 
       }
       else {
-        return Swal.fire('You Can not delete this Assignment')
+        return  Swal.fire({
+          icon: "error",
+          title: "Oops... you Can't Delete",
+          text: "Only Creator can Delete",
+          
+        });
       }
 
     })
@@ -53,7 +58,7 @@ const AssignmentCard = ({ assignment , setAssignments , assignments}) => {
           <img src={image} alt="assignment image" className="rounded-xl w-full h-44" />
         </figure>
         <div className=" px-5 ">
-          <h2 className="font-bold text-black text-xl my-2">{tittle}</h2>
+          <h2 className="font-bold text-black text-xl h-14 my-3">{tittle}</h2>
        
         <div className="flex justify-between">
         <p className="font-semibold text-lg ">Mark: <span className="font-bold ">{marks}</span></p>

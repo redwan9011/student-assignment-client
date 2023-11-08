@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const GiveMarks = () => {
@@ -19,6 +20,7 @@ const GiveMarks = () => {
         .then(res => {
             console.log(res.data);
             form.reset()
+            Swal.fire("Give mark Done");
         })
     }
 

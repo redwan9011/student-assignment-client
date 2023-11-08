@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthPorvider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 const AssignmentSubmit = () => {
@@ -26,11 +27,13 @@ const AssignmentSubmit = () => {
       axios.post('http://localhost:3000/submit' ,assignmentSubmit)
       .then(res => {
         console.log(res.data);
+        Swal.fire('Assignment Submitted')
       })
     }   
    
     return (
-        <div className=" flex  items-center justify-center mb-10 border-2 border-red-400 h-[55vh] md:h-[70vh] px-3 md:px-0 mt-3">
+        <div className=" flex flex-col  items-center justify-center mb-10 border-2 border-red-400 h-[55vh] md:h-[70vh] px-3 md:px-0 mt-3">
+          <h1 className="text-red-600 mb-3 text-3xl font-bold">Submit Your Assignment</h1>
            <form onSubmit={ handleSubmit} >
            <input type="text" name="pdf" placeholder="assignment pdf link" className="input input-bordered input-secondary w-full mb-3" required />
 
