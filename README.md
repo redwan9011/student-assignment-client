@@ -16,5 +16,5 @@ About my Project:
 
     And theere are many more function like only creator of assignment will delete and update. In View details page user will see assignments Details and a Take Assignment button, and user wiil submit assignment with pdf and quick note to submit assignment. Then submitted asssignment data will store submitted Assignment page" 
 
-    ##Techonolofy:
+    ##Technology:
     Html, Css, Tailwind, javascript, React, mongodb, express, firebase
